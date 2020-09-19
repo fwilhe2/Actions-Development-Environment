@@ -24,12 +24,7 @@ RUN apt-get -y update \
  && chown -R runner /home/runner
 
 RUN mkdir -p /opt/hostedtoolcache; chmod -R 777 /opt
-
-WORKDIR /home/runner/work/_actions/__USER__/__REPO__/main
-RUN chown -R runner /home/runner
-
-USER runner
-
 RUN mkdir -p /home/runner/work/_actions/__USER__/__REPO__/main
 RUN mkdir -p /home/runner/work/_actions/__USER__/__REPO__/main.completed
 RUN mkdir -p /home/runner/work/_temp
+RUN chown -R runner /home/runner
